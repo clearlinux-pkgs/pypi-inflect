@@ -4,7 +4,7 @@
 #
 Name     : pypi-inflect
 Version  : 5.5.2
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/9d/9b/637b8035110a1cabfc072d86480d09a1cc6fd1f5bad03a4bfd04528e744d/inflect-5.5.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9d/9b/637b8035110a1cabfc072d86480d09a1cc6fd1f5bad03a4bfd04528e744d/inflect-5.5.2.tar.gz
 Summary  : Correctly generate plurals, singular nouns, ordinals, indefinite articles; convert numbers to words
@@ -64,7 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649258900
+export SOURCE_DATE_EPOCH=1649764030
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
