@@ -4,7 +4,7 @@
 #
 Name     : pypi-inflect
 Version  : 6.0.0
-Release  : 14
+Release  : 15
 URL      : https://files.pythonhosted.org/packages/93/b3/f53dae21efbc41231797d136f97414a441b9e4cc51ee72a1780793b84bed/inflect-6.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/93/b3/f53dae21efbc41231797d136f97414a441b9e4cc51ee72a1780793b84bed/inflect-6.0.0.tar.gz
 Summary  : Correctly generate plurals, singular nouns, ordinals, indefinite articles; convert numbers to words
