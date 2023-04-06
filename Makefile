@@ -1,5 +1,5 @@
 PKG_NAME := pypi-inflect
-URL = https://files.pythonhosted.org/packages/dd/34/0faab1eb3b2f30f1ed074672f21d39fbfd9ee780e9f16e28ca8bfc5e646f/inflect-6.0.2.tar.gz
+URL = https://files.pythonhosted.org/packages/3b/9b/6e44523788cadec2a2bef2632c21264a74ab172cf9a13fab5c94b10db7f2/inflect-6.0.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
