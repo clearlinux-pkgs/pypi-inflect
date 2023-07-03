@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-inflect
-Version  : 6.0.4
-Release  : 22
-URL      : https://files.pythonhosted.org/packages/3b/9b/6e44523788cadec2a2bef2632c21264a74ab172cf9a13fab5c94b10db7f2/inflect-6.0.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/3b/9b/6e44523788cadec2a2bef2632c21264a74ab172cf9a13fab5c94b10db7f2/inflect-6.0.4.tar.gz
+Version  : 6.1.1
+Release  : 23
+URL      : https://files.pythonhosted.org/packages/29/45/b65eef08acc1ecfc91bbb78f2514642fcb6c2e293fad6a58775417cd3914/inflect-6.1.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/29/45/b65eef08acc1ecfc91bbb78f2514642fcb6c2e293fad6a58775417cd3914/inflect-6.1.1.tar.gz
 Summary  : Correctly generate plurals, singular nouns, ordinals, indefinite articles; convert numbers to words
 Group    : Development/Tools
 License  : MIT
@@ -16,6 +16,8 @@ Requires: pypi-inflect-python = %{version}-%{release}
 Requires: pypi-inflect-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(py)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_scm)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
@@ -57,10 +59,10 @@ python3 components for the pypi-inflect package.
 
 
 %prep
-%setup -q -n inflect-6.0.4
-cd %{_builddir}/inflect-6.0.4
+%setup -q -n inflect-6.1.1
+cd %{_builddir}/inflect-6.1.1
 pushd ..
-cp -a inflect-6.0.4 buildavx2
+cp -a inflect-6.1.1 buildavx2
 popd
 
 %build
@@ -68,15 +70,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680793454
+export SOURCE_DATE_EPOCH=1688410217
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
@@ -93,7 +95,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-inflect
-cp %{_builddir}/inflect-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-inflect/8e6689d37f82d5617b7f7f7232c94024d41066d1 || :
+cp %{_builddir}/inflect-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-inflect/0445ed0f69910eeaee036f09a39a13c6e1f37e12 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -113,7 +115,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/pypi-inflect/8e6689d37f82d5617b7f7f7232c94024d41066d1
+/usr/share/package-licenses/pypi-inflect/0445ed0f69910eeaee036f09a39a13c6e1f37e12
 
 %files python
 %defattr(-,root,root,-)
