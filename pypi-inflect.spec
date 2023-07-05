@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-inflect
-Version  : 6.1.1
-Release  : 23
-URL      : https://files.pythonhosted.org/packages/29/45/b65eef08acc1ecfc91bbb78f2514642fcb6c2e293fad6a58775417cd3914/inflect-6.1.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/29/45/b65eef08acc1ecfc91bbb78f2514642fcb6c2e293fad6a58775417cd3914/inflect-6.1.1.tar.gz
+Version  : 7.0.0
+Release  : 24
+URL      : https://files.pythonhosted.org/packages/9f/90/1d0a889847fdce963ebe9684de24a749e4fad627bf595e9f0d32730f85a8/inflect-7.0.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/9f/90/1d0a889847fdce963ebe9684de24a749e4fad627bf595e9f0d32730f85a8/inflect-7.0.0.tar.gz
 Summary  : Correctly generate plurals, singular nouns, ordinals, indefinite articles; convert numbers to words
 Group    : Development/Tools
 License  : MIT
@@ -53,16 +53,17 @@ Group: Default
 Requires: python3-core
 Provides: pypi(inflect)
 Requires: pypi(pydantic)
+Requires: pypi(typing_extensions)
 
 %description python3
 python3 components for the pypi-inflect package.
 
 
 %prep
-%setup -q -n inflect-6.1.1
-cd %{_builddir}/inflect-6.1.1
+%setup -q -n inflect-7.0.0
+cd %{_builddir}/inflect-7.0.0
 pushd ..
-cp -a inflect-6.1.1 buildavx2
+cp -a inflect-7.0.0 buildavx2
 popd
 
 %build
@@ -70,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688410217
+export SOURCE_DATE_EPOCH=1688571673
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
