@@ -7,7 +7,7 @@
 #
 Name     : pypi-inflect
 Version  : 7.4.0
-Release  : 31
+Release  : 32
 URL      : https://files.pythonhosted.org/packages/e1/dc/02614acece4d578e709c606594c989cfd9f15cf6401444e5603e60df9b26/inflect-7.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e1/dc/02614acece4d578e709c606594c989cfd9f15cf6401444e5603e60df9b26/inflect-7.4.0.tar.gz
 Summary  : Correctly generate plurals, singular nouns, ordinals, indefinite articles
